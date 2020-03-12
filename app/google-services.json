@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "977637167385",
+    "firebase_url": "https://might-kopite-quiz.firebaseio.com",
+    "project_id": "might-kopite-quiz",
+    "storage_bucket": "might-kopite-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977637167385:android:fc804dfea4b8d7c05c3588",
+        "android_client_info": {
+          "package_name": "com.mighty_kopite.quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977637167385-gt0uqsa4c4mm4hgrki8j50ls3tjc2vba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mighty_kopite.quiz",
+            "certificate_hash": "c77121322a841b002b11a4b17e98b02a82a55ad4"
+          }
+        },
+        {
+          "client_id": "977637167385-qe66dmfe24qqai6lhqkpnpt4lck4grqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3E6aP2tEzb7zleiyjZo6UqMZxUhgcsO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977637167385-qe66dmfe24qqai6lhqkpnpt4lck4grqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

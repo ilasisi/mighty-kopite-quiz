@@ -1,0 +1,94 @@
+{
+  "questionBank": [
+    {
+      "question": "Snow color?",
+      "options": [
+        "White",
+        "Green",
+        "Blue",
+        "yellow"
+      ]
+    },
+    {
+      "question": "Coal color?",
+      "options": [
+        "Black",
+        "White",
+        "Blue",
+        "Orange"
+      ]
+    },
+    {
+      "question": "Donald Trump's color?",
+      "options": [
+        "Orange",
+        "Black",
+        "Green",
+        "Blue"
+      ]
+    },
+    {
+      "question": "Course number?",
+      "options": [
+        "cs3300",
+        "cs4300",
+        "cs1400",
+        "cs4770"
+      ]
+    },
+    {
+      "question": "Assignment number?",
+      "options": [
+        "assign3",
+        "assign2",
+        "assign69",
+        "assign5"
+      ]
+    },
+    {
+      "question": "Canada's capital city?",
+      "options": [
+        "Ottawa",
+        "Toronto",
+        "St.Johns",
+        "Montreal"
+      ]
+    },
+    {
+      "question": "The sound dog makes?",
+      "options": [
+        "woof?",
+        "meow",
+        "be be",
+        "moo"
+      ]
+    },
+    {
+      "question": "Number of planets in solar system?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "11"
+      ]
+    },
+    {
+      "question": "Biggest planet in solar system?",
+      "options": [
+        "Jupiter",
+        "Neptune",
+        "Saturn",
+        "Uranus"
+      ]
+    },
+    {
+      "question": "Find the odd one?",
+      "options": [
+        "hyena",
+        "dog",
+        "lion",
+        "wolf"
+      ]
+    }
+  ]
+}
