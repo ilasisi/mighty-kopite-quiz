@@ -28,9 +28,16 @@
         android:name="com.example.ywna.quiz.ui.quiz.QuizFragment"
         android:label="@string/title_quiz"
         tools:layout="@layout/fragment_quiz" />
+
+    <fragment
+        android:id="@+id/navigation_prediction"
+        android:name="com.example.ywna.quiz.ui.prediction.PredictionFragment"
+        android:label="@string/title_prediction"
+        tools:layout="@layout/fragment_prediction" />
+
     <fragment
         android:id="@+id/navigation_result"
-        android:name="com.example.ywna.quiz.ui.score.ResultFragment"
+        android:name="com.example.ywna.quiz.ui.result.ResultFragment"
         android:label="@string/title_result"
         tools:layout="@layout/fragment_result" />
     <fragment

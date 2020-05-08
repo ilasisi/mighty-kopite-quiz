@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.navigation_quiz -> hideBottomNav()
+                R.id.navigation_prediction -> hideBottomNav()
                 R.id.navigation_result -> hideBottomNav()
                 R.id.navigation_login -> hideBottomNav()
                 R.id.navigation_register -> hideBottomNav()

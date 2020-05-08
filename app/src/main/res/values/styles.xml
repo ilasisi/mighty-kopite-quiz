@@ -26,7 +26,7 @@
     </style>
 
     <style name="textFontStyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:fontFamily">@font/open_san</item>
+        <item name="android:fontFamily">@font/neusa_next_std</item>
     </style>
 
 </resources>

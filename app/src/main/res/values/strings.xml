@@ -2,6 +2,7 @@
     <string name="app_name">Mighty Kopite Quiz</string>
     <string name="title_home">Home</string>
     <string name="title_quiz">Quiz</string>
+    <string name="title_prediction">Prediction</string>
     <string name="title_result">Result</string>
     <string name="title_login">Login</string>
     <string name="title_register">Register</string>
@@ -15,9 +16,9 @@
     <string name="password_hint">********</string>
     <string name="e_mail">E-mail</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
-    <string name="welcome_back">Welcome Back,</string>
+    <string name="welcome_back">Welcome Back, Kopite</string>
     <string name="todo">TODO</string>
-    <string name="hey_red_fan">Hey Red Fan</string>
+    <string name="hey_kopite">Hey Kopite!</string>
     <string name="please_register_an_account">Please Register an account</string>
     <string name="name">Full Name</string>
     <string name="enter_your_full_name">Enter your full name</string>
@@ -26,12 +27,14 @@
     <string name="register">Register</string>
     <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
     <string name="user_id">user_id</string>
+    <string name="result_array">result_array</string>
     <string name="welcome">Welcome,</string>
     <string name="start_trivia">Start Trivia</string>
     <string name="your_score">Your Score</string>
     <string name="your_total_score">Your Total Score</string>
     <string name="reset_question">Reset Question</string>
     <string name="already_attempt_question">You have already attempt available quiz, please stay in touch for new quiz</string>
+    <string name="already_attempt_prediction">You have already attempt prediction, please stay in touch for new predictions</string>
     <string name="not_yet_registered_sign_up">Not yet registered? Sign up</string>
     <string name="all_time_leaderboard">All Time Leaderboard</string>
     <string name="back">Back</string>
@@ -42,4 +45,7 @@
     <string name="get_reset_link">Get Reset Link</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="enter_your_registered_email_and_get_reset_password_link">Enter your registered email and get reset password link</string>
+    <string name="predict_games">Predict Games</string>
+    <string name="next">Next</string>
+    <string name="init_prediction_results">Init Prediction Results</string>
 </resources>

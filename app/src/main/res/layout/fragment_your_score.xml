@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.score.ResultFragment"
+    android:background="@drawable/liv_bg"
     android:padding="30dp"
-    android:background="@drawable/liv_bg">
+    tools:context=".ui.result.ResultFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/result_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        app:cardPreventCornerOverlap="true"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="10dp"
-        android:layout_marginTop="50dp">
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="30dp">
+
             <TextView
                 style="@style/textFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/your_total_score"
                 android:layout_gravity="center"
-                android:textColor="@android:color/black"
+                android:text="@string/your_total_score"
                 android:textAllCaps="true"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/total_score"
                 style="@style/textFontStyle"
@@ -42,47 +45,87 @@
                 android:textSize="80sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
+
             <ProgressBar
                 android:id="@+id/progress_circular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:indeterminate="true"
-                android:layout_marginStart="5dp"
-                android:indeterminateTintMode="src_atop"
-                android:indeterminateTint="@color/colorPrimaryDark"
                 android:layout_gravity="center"
-                android:layout_margin="20dp"/>
+                android:layout_margin="20dp"
+                android:layout_marginStart="5dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorPrimaryDark"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/reset_question"
-        style="@style/textFontStyle"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/admin_buttons"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:orientation="vertical"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/wrong_option_bg"
-        android:drawablePadding="10dp"
-        android:padding="10sp"
-        android:text="@string/reset_question"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
-    <ProgressBar
-        android:id="@+id/progress_circular_reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="50dp"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/colorPrimaryDark"
-        android:indeterminateTintMode="src_atop"
-        android:visibility="gone" />
+        android:gravity="center"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/reset_question_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/reset_question"
+                style="@style/textFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wrong_option_bg"
+                android:padding="10sp"
+                android:text="@string/reset_question"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_circular_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@android:color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/init_prediction_container"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/init_prediction"-->
+<!--                style="@style/textFontStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/wrong_option_bg"-->
+<!--                android:padding="10sp"-->
+<!--                android:text="@string/init_prediction_results"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progress_circular_prediction"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:indeterminate="true"-->
+<!--                android:indeterminateTint="@android:color/white"-->
+<!--                android:visibility="gone" />-->
+<!--        </LinearLayout>-->
+    </LinearLayout>
 
 </RelativeLayout>

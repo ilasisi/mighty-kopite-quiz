@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/liv_bg"
+    android:paddingStart="20dp"
+    android:paddingTop="100dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp">
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@android:color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/prediction_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/fixture_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/home_team"
+                style="@style/textFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:layout_centerVertical="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_vs"
+                style="@style/textFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:text="vs"
+                android:layout_toEndOf="@id/home_team"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/away_team"
+                style="@style/textFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/text_vs"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:layout_centerVertical="true"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/answer_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fixture_container"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_home"
+                style="@style/textFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:text="Home"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:rippleColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/btn_draw"
+                style="@style/textFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:text="Draw"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:rippleColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/btn_away"
+                style="@style/textFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/option_button_bg"
+                android:padding="20dp"
+                android:textAllCaps="true"
+                android:text="Away"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:rippleColor="@color/colorPrimary" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/textFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/correct_option_bg"
+            android:layout_alignParentBottom="true"
+            android:padding="20dp"
+            android:textAllCaps="true"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:rippleColor="@color/colorPrimary" />
+    </RelativeLayout>
+</FrameLayout>

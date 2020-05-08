@@ -1,27 +1,45 @@
 package com.example.ywna.quiz.ui.quiz
 
-import android.content.Context
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.io.IOException
-import java.nio.charset.Charset
-
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class QuizViewModel : ViewModel() {
+    val questionTime: MutableLiveData<Long> = MutableLiveData()
+    val questionArray: MutableLiveData<ArrayList<ArrayList<String>>> = MutableLiveData()
+    val questionArrayTmp = ArrayList<ArrayList<String>>()
 
-    fun loadJSONFromAsset(context: Context): String? {
-        lateinit var json: String
-        val charset: Charset = Charsets.UTF_8
-        try {
-            val `is` = context.assets.open("questions.json")
-            val size = `is`.available()
-            val buffer = ByteArray(size)
-            `is`.read(buffer)
-            `is`.close()
-            json = String(buffer, charset)
-        } catch (ex: IOException) {
-            ex.printStackTrace()
-            return null
-        }
-        return json
+    fun getQuestionTime(): LiveData<Long> {
+        FirebaseDatabase.getInstance().reference
+            .child("questionBank").child("time")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(p0: DataSnapshot) {
+                    val time = p0.value.toString().toLong()
+                    questionTime.postValue(time)
+                }
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
+        return questionTime
+    }
+
+    fun getQuestions(): LiveData<ArrayList<ArrayList<String>>> {
+        FirebaseDatabase.getInstance().reference
+            .child("questionBank").child("questions")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(p0: DataSnapshot) {
+                    for (i in p0.children) {
+                        val question: ArrayList<String> = i.value as ArrayList<String>
+                        questionArrayTmp.add(question)
+                        questionArray.postValue(questionArrayTmp)
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
+        return questionArray
     }
 }

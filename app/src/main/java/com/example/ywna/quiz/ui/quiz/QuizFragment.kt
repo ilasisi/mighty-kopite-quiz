@@ -12,9 +12,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.ywna.quiz.R
-import com.example.ywna.quiz.ui.score.ResultFragment
+import com.example.ywna.quiz.ui.result.ResultFragment
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_quiz.*
 import java.util.*
@@ -23,6 +24,8 @@ import kotlin.collections.ArrayList
 
 class QuizFragment : Fragment(), View.OnClickListener, IOnBackPressed {
 
+
+    private var viewModel: QuizViewModel = QuizViewModel()
     private var countDownTimer: CountDownTimer? = null
     private var textQuizCount: TextView? = null
     private var textTotalQuiz: TextView? = null
@@ -50,7 +53,7 @@ class QuizFragment : Fragment(), View.OnClickListener, IOnBackPressed {
         databaseReference = FirebaseDatabase.getInstance().reference.child("questionBank")
 
         initView(root)
-        loadTime()
+        loadQuizTime()
         loadQuestions()
         return root
     }
@@ -71,29 +74,17 @@ class QuizFragment : Fragment(), View.OnClickListener, IOnBackPressed {
     }
 
     private fun loadQuestions() {
-        databaseReference.child("questions").addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(p0: DataSnapshot) {
-                for (i in p0.children) {
-                    val question: ArrayList<String> = i.value as ArrayList<String>
-                    questionArray.add(question)
-                }
-                totalQuiz = questionArray.size
-                showNextQuiz()
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
+        viewModel.getQuestions().observe(requireActivity(), Observer { questions ->
+            questionArray = questions
+            totalQuiz = questionArray.size
+            showNextQuiz()
         })
     }
 
-    private fun loadTime() {
-        databaseReference.child("time").addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(p0: DataSnapshot) {
-                time = p0.value.toString().toLong()
-
-                countDownTimer()
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
+    private fun loadQuizTime() {
+        viewModel.getQuestionTime().observe(requireActivity(), androidx.lifecycle.Observer { quizTime ->
+            time = quizTime
+            countDownTimer()
         })
     }
 
